@@ -1,0 +1,22 @@
+create database employee; 
+use employee; 
+create table emp_details(emp_no int NOT NULL PRIMARY KEY, 
+ -> emp_name varchar(80) , 
+ -> join_date date, 
+ -> design_code varchar(1), 
+ -> dept varchar(80), 
+ -> basic int, 
+ -> hra int, 
+ -> it int); 
+create table desg_details( 
+ -> designation_code varchar(1) NOT NULL, 
+ -> designation varchar(80) NOT NULL, 
+ -> da int, 
+ -> Primary Key (designation), 
+ -> Foreign Key (designation_code) REFERENCES emp_details(design_code) 
+ -> ); 
+Insert Into desg_details(designation_code,designation,ds) Values('e', 'Engineer', 20000);
+Insert Into desg_details(designation_code,designation,ds) Values('c', 'Consultant', 32000);
+Insert Into desg_details(designation_code,designation,ds) Values('k', 'Clerk', 12000);
+Insert Into desg_details(designation_code,designation,ds) Values('r', 'Receptionist', 15000);
+Insert Into desg_details(designation_code,designation,ds) Values('m', 'Manager', 40000);
